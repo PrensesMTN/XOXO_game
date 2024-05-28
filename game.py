@@ -44,15 +44,24 @@ class TicTacToe:
         return False
 
     def highlight_winner(self):
-        pass
-       
+        for index in self.winning_combination:
+            self.buttons[index].config(bg='lightgreen')
 
     def ask_play_again(self):
-        pass
+        if messagebox.askyesno("Play Again", "Do you want to play again?"):
+            self.reset_board()
+        else:
+            self.root.quit()
+    
+
+    
 
 
     def reset_board(self):
-        pass
+        self.board = ['' for _ in range(9)]
+        for button in self.buttons:
+            button.config(text='', bg='SystemButtonFace')
+        self.current_player = 'X'
 
 if __name__ == "__main__":
     root = tk.Tk()
