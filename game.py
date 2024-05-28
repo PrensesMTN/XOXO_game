@@ -7,6 +7,8 @@ class TicTacToe:
     def __init__(self, root):
         self.root = root
         self.root.title("Tic Tac Toe")
+        self.root.eval('tk::PlaceWindow . center')
+
         self.menubar = Menu(root)
         self.root.config(menu=self.menubar)
         self.file_menu = Menu(self.menubar)
