@@ -1,11 +1,26 @@
 import tkinter as tk
 from tkinter import messagebox
 from tkinter import Menu
+import os
 
 class TicTacToe:
     def __init__(self, root):
         self.root = root
         self.root.title("Tic Tac Toe")
+        self.menubar = Menu(root)
+        self.root.config(menu=self.menubar)
+        self.file_menu = Menu(self.menubar)
+
+        self.file_menu.add_command(
+            label='Exit',
+            command=self.root.destroy
+        )
+
+        self.menubar.add_cascade(
+            label="File",
+            menu=self.file_menu
+        )   
+
         self.board = ['' for _ in range(9)]
         self.current_player = 'X'
         self.buttons = []
