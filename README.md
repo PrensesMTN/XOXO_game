@@ -30,7 +30,7 @@ write " pip install tkinter " in your terminal or command prompt.
 ## Code Explanation
 
 ### Main Class: TicTacToe
-
+@
 #### `__init__(self, root)`
 
 - Initializes and starts the game window.
