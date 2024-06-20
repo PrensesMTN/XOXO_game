@@ -2,7 +2,7 @@ import tkinter as tk
 from tkinter import messagebox
 from tkinter import Menu
 import os
-
+os.environ['TK_SILENCE_DEPRECATION'] = '1'
 class TicTacToe:
     def __init__(self, root):
         self.root = root
