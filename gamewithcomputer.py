@@ -27,6 +27,28 @@ def is_board_full(board):
     return True
 
 
+def bot_move(board, player):
+    for i in range(3):
+        for j in range(3):
+            if board[i][j] == " ":
+                board[i][j] = player
+                if check_winner(board) == player:
+                    return
+                board[i][j] = " "
+    opponent = "X" if player == "O" else "O"
+    for i in range(3):
+        for j in range(3):
+            if board[i][j] == " ":
+                board[i][j] = opponent
+                if check_winner(board) == opponent:
+                    board[i][j] = player
+                    return
+                board[i][j] = " "
+    empty_spots = [(i, j) for i in range(3) for j in range(3) if board[i][j] == " "]
+    if empty_spots:
+        row, col = random.choice(empty_spots)
+        board[row][col] = player
+        
 class TicTacToeGame:
     def __init__(self, root):
         self.root = root
