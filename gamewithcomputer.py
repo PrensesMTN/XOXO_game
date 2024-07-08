@@ -44,11 +44,12 @@ def bot_move(board, player):
                     board[i][j] = player
                     return
                 board[i][j] = " "
+                
     empty_spots = [(i, j) for i in range(3) for j in range(3) if board[i][j] == " "]
     if empty_spots:
         row, col = random.choice(empty_spots)
         board[row][col] = player
-        
+
 class TicTacToeGame:
     def __init__(self, root):
         self.root = root
